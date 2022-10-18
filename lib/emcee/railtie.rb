@@ -9,7 +9,7 @@ require "emcee/resolver"
 module Emcee
   class Railtie < Rails::Railtie
     initializer :add_asset_paths do |app|
-      app.assets.paths.unshift(Rails.root.join("vendor", "assets", "components"))
+      app.assets.prepend_path(Rails.root.join("vendor", "assets", "components"))
     end
 
     initializer :add_preprocessors do |app|
